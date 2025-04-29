@@ -16,6 +16,13 @@ public class Workspace {
         root.addBranch(node2, "full");
         node2.addBranch(leaf3, "No");
 
+        String path = "Restaurant_Data.csv";
+        DataSet data = new DataSet(path, 10);
+
+        Attributes test = data.getDataAtIndex(0).getAttributes();
+        String result = root.classify(test);
+        System.out.println(result);
+
     }
 
 }

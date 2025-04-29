@@ -2,8 +2,8 @@ import java.util.List;
 
 public class Record {
 
-    private Attributes attributes; // Xn - List of describers
-    private String classification; // Yn - Single word class
+    private Attributes attributes; // Xn - List of describers - all the info
+    private String classification; // Yn - Single word class - Yes/No
 
     public Record(Attributes a, String c) {
         attributes = a;

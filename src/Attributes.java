@@ -4,6 +4,10 @@ import java.util.List;
 public class Attributes {
     private ArrayList<String> fields;
 
+    public Attributes() {
+        fields = new ArrayList<String>();
+    }
+
     public Attributes(List<String> input) {
         fields = new ArrayList<String>();
         for (String s : input) {
@@ -43,6 +47,10 @@ public class Attributes {
 
     public void removeAttributeByName(String name) {
         fields.remove(name);
+    }
+
+    public void add(String string) {
+        fields.add(string);
     }
 
 }

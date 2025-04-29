@@ -1,4 +1,6 @@
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class DataSet {
 
@@ -11,6 +13,39 @@ public class DataSet {
 
     public DataSet(String path, int classIndex) {
 
+        try {
+            File file = new File(path);
+            Scanner input = new Scanner(file);
+
+            // get each attribute
+            String header[] = input.nextLine().split(",");
+            for (int i = 0; i < header.length; i++) {
+                if (i != classIndex) {
+                    attrs.add(header[i]);
+                }
+
+            }
+
+            while (input.hasNext()) {
+                String line[] = input.nextLine().split(",");
+                ArrayList<String> a = new ArrayList<String>();
+                String c = "";
+
+                for (int i = 0; i < line.length; i++) {
+                    if (i == classIndex) {
+                        c = line[i];
+                    } else {
+                        a.add(line[i]);
+                    }
+                }
+
+                Attributes attrs = new Attributes(a);
+
+            }
+
+        } catch (Exception e) {
+
+        }
     }
 
     public void addRecord(Record r) {
