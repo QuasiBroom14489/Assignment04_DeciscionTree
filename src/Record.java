@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.ArrayList;
 
 public class Record {
 
@@ -11,7 +11,7 @@ public class Record {
 
     }
 
-    public Record(List<String> a, String c) {
+    public Record(ArrayList<String> a, String c) {
         attributes = new Attributes(a);
         classification = c;
 
@@ -22,6 +22,7 @@ public class Record {
     }
 
     public String getClassification() {
+        // System.out.println(classification + " Record Classification");
         return classification;
     }
 
@@ -30,11 +31,15 @@ public class Record {
     }
 
     public String toString() {
-        return null;
+        return attributes.toString() + " Class: " + classification;
     }
 
     public void removeAttributeAtIndex(int index) {
+        attributes.removeAttributeAtIndex(index);
+    }
 
+    public void removeAttributeByName(String name) {
+        attributes.removeAttributeByName(name);
     }
 
 }
